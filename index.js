@@ -1,8 +1,3 @@
-/*****************************************************************************
- * Challenge 2: Review the provided code. The provided code includes:
- * -> Statements that import data from games.js
- * -> A function that deletes all child elements from a parent element in the DOM
-*/
 
 // import the JSON data about the crowd funded games from the games.js file
 import GAMES_DATA from './games.js';
@@ -17,10 +12,6 @@ function deleteChildElements(parent) {
     }
 }
 
-/*****************************************************************************
- * Challenge 3: Add data about each game as a card to the games-container
- * Skills used: DOM manipulation, for loops, template literals, functions
-*/
 
 // grab the element with the id games-container
 const gamesContainer = document.getElementById("games-container");
@@ -42,34 +33,11 @@ function addGamesToPage(games) {
         <img src="${game.img}" alt="${game.name}" class="game-img" />`;
         gamesContainer.appendChild(gameElement);
     }
-
-
-        // create a new div element, which will become the game card
-
-
-        // add the class game-card to the list
-
-
-        // set the inner HTML using a template literal to display some info 
-        // about each game
-        // TIP: if your images are not displaying, make sure there is space
-        // between the end of the src attribute and the end of the tag ("/>")
-
-
-        // append the game to the games-container
-
 }
 
 // call the function we just defined using the correct variable
 addGamesToPage(GAMES_JSON); // this will add the initial list of games to the DOM
 // later, we'll call this function using a different list of games
-
-
-/*************************************************************************************
- * Challenge 4: Create the summary statistics at the top of the page displaying the
- * total number of contributions, amount donated, and number of games on the site.
- * Skills used: arrow functions, reduce, template literals
-*/
 
 // grab the contributions card element
 const contributionsCard = document.getElementById("num-contributions");
@@ -93,12 +61,6 @@ const numberGames = GAMES_JSON.length;
 const gamesCard = document.getElementById("num-games");
 gamesCard.innerHTML = `${numberGames}`;
 
-
-/*************************************************************************************
- * Challenge 5: Add functions to filter the funded and unfunded games
- * total number of contributions, amount donated, and number of games on the site.
- * Skills used: functions, filter
-*/
 
 // show only games that do not yet have enough funding
 function filterUnfundedOnly() {
@@ -141,10 +103,9 @@ const allBtn = document.getElementById("all-btn");
 unfundedBtn.addEventListener("click", filterUnfundedOnly);
 fundedBtn.addEventListener("click", filterFundedOnly);
 allBtn.addEventListener("click", showAllGames);
-/*************************************************************************************
- * Challenge 6: Add more information at the top of the page about the company.
- * Skills used: template literals, ternary operator
-*/
+
+/*************************************************************************************/
+
 
 // grab the description container
 const descriptionContainer = document.getElementById("description-container");
